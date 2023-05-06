@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "./components/input.js";
+import Output from "./components/output.js";
 import './input.css';
 
 function App() {
@@ -8,8 +9,9 @@ function App() {
   const [genre, setGenre] = useState("");
 
   return (
-    <div>
+    <div class="bg-slate-700 h-fit p-1 mt-32">
       <Input />
+      <Output />
     </div>
   );
 }

@@ -7,7 +7,7 @@ function Input() {
   const [genre, setGenre] = useState("");
 
   return (
-    <div class="p-6 max-w-sm mx-auto mt-32 bg-white rounded-xl shadow-lg flex items-center space-x-4">
+    <div class="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg flex items-center space-x-4">
       <div>
         <div class="text-xl font-medium text-black">Cadence</div>
       </div>
