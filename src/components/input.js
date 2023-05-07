@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import '../input.css';
-import fetchToken from "../fetching/fetch_token.js"
+import fetchToken from "../fetching/fetch_token.js";
+import fetchGenres from "../fetching/fetch_genres.js";
 
 function Input() {
 
   const [spm, setSPM] = useState(160);
   const [genre, setGenre] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    fetchToken();
+    const token = await fetchToken();
+    console.log(token);
+    fetchGenres(token);
   }
 
   return (
