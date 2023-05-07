@@ -1,16 +1,18 @@
 import React from "react";
-import Input from "./components/input.js";
-import Output from "./components/output.js";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/home.js";
+import Error from "./components/error.js";
 import './input.css';
 
 function App() {
 
   return (
-    <div class="bg-slate-700 h-fit p-10 mt-32">
-      <Input />
-      <Output />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/error" element={<Error />} />
+    </Routes>
   );
 }
 
 export default App;
+
