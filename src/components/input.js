@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import '../input.css';
+import fetchToken from "../fetching/fetch_token.js"
 
 function Input() {
 
   const [spm, setSPM] = useState(160);
   const [genre, setGenre] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetchToken();
+  }
+
   return (
     <div class="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
       <div>
         <div class="text-xl font-medium text-black w-20">Cadence</div>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="strides" class="text-l font-light text-black flex flex-col my-2">
           Strides per Minute
           <input
