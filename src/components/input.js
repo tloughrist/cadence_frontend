@@ -7,13 +7,19 @@ function Input() {
 
   const [spm, setSPM] = useState(160);
   const [genre, setGenre] = useState("");
+  const [token, setToken] = useState();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const token = await fetchToken();
-    console.log(token);
-    fetchGenres(token);
-  }
+    const res = await fetchToken();
+    setToken(res);
+  };
+
+  async function getGenres(e) {
+    e.preventDefault();
+    const res = await fetchGenres(token);
+    console.log(res);
+  };
 
   return (
     <div class="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
@@ -52,6 +58,12 @@ function Input() {
           Find songs
         </button>
       </form>
+      <button
+        onClick={getGenres}
+        class="text-l font-light text-white bg-slate-700 mt-2 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
+      >
+        Find Genres
+      </button>
     </div>
   );
 }
