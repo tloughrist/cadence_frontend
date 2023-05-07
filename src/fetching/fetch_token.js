@@ -9,5 +9,5 @@ export default async function fetchToken() {
     body: `grant_type=client_credentials&client_id=${client_id}&client_secret=${secret}`
   });
   const token = await res.json();
-  return token.access_token;
+  return token;
 };

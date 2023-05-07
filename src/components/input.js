@@ -12,6 +12,7 @@ function Input() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await fetchToken();
+    console.log(res);
     setToken(res);
   };
 
