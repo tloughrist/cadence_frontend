@@ -3,31 +3,30 @@ import '../input.css';
 import fetchToken from "../fetching/fetch_token.js";
 import fetchTracks from "../fetching/fetch_tracks.js";
 
-function Input() {
+function Input({ setToken, setTracks }) {
 
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [song, setSong] = useState("");
-  const [token, setToken] = useState();
 
   async function handleSubmit(e) {
     e.preventDefault();
     const res1 = await fetchToken();
-    console.log(res1);
     setToken(res1.access_token);
     const res2 = await getTracks(res1.access_token);
-    console.log(res2);
+    setTracks(res2);
   };
 
-  function getTracks(tok) {
+  async function getTracks(tok) {
     let art = "";
     let alb = "";
     let son = "";
     artist.length > 0 ? art = artist : art = "*";
     album.length > 0 ? alb = album : alb = "*";
     song.length > 0 ? son = song : son = "*";
-    fetchTracks(tok, art, alb, son);
-  }
+    const res = await fetchTracks(tok, art, alb, son);
+    return res;
+  };
 
   return (
     <div class="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">

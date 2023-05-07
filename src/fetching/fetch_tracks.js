@@ -6,9 +6,6 @@ export default async function fetchTracks(token, artist, album, song) {
       'Authorization': `Bearer ${token}`
     }
   });
-  const rstream = await res.body.getReader();
-  const red = await rstream.read();
-  console.log(red)
-  const tracks = await res.json();
-  return tracks;
+  const data = await res.json();
+  return data.tracks.items;
 };
