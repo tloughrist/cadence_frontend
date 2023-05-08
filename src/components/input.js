@@ -27,7 +27,6 @@ function Input({ setToken, setTracks }) {
     artist.length > 0 ? art = artist : art = "*";
     album.length > 0 ? alb = album : alb = "*";
     song.length > 0 ? son = song : son = "*";
-    console.log(bpmLow)
     if (bpmLow.length == 0 || bpmHigh.length == 0) {
       const res = await fetchTracks(tok, art, alb, son);
       return res;

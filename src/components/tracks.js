@@ -29,11 +29,12 @@ function Tracks({ token, info }) {
 
   async function normalizeData(info) {
    if (Object.keys(info).length > 9) {
+    const beats = await getBPM();
     setTitle(info.name);
     setArtist(info.artists[0].name);
     setAlbum(info.album.name);
     setLength(millisToMinutesAndSeconds(info.duration_ms));
-    setBPM(await getBPM());
+    setBPM(beats);
    } else {
     setTitle(info.title);
     setArtist(info.artist);
@@ -45,6 +46,7 @@ function Tracks({ token, info }) {
 
   async function getBPM() {
     const res = await fetchBPM(token, info);
+    return res;
   };
 
   return (
