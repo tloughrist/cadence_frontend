@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import '../input.css';
 import fetchToken from "../fetching/fetch_token.js";
 import fetchTracks from "../fetching/fetch_tracks.js";
+import fetchByBPM from "../fetching/fetch_by_bpm.js";
 
 function Input({ setToken, setTracks }) {
 
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [song, setSong] = useState("");
+  const [bpmLow, setBpmLow] = useState("");
+  const [bpmHigh, setBpmHigh] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,8 +27,14 @@ function Input({ setToken, setTracks }) {
     artist.length > 0 ? art = artist : art = "*";
     album.length > 0 ? alb = album : alb = "*";
     song.length > 0 ? son = song : son = "*";
-    const res = await fetchTracks(tok, art, alb, son);
-    return res;
+    console.log(bpmLow)
+    if (bpmLow.length == 0 || bpmHigh.length == 0) {
+      const res = await fetchTracks(tok, art, alb, son);
+      return res;
+    } else {
+      const res = await fetchByBPM(bpmLow, bpmHigh);
+      return res;
+    }
   };
 
   return (
@@ -34,7 +43,7 @@ function Input({ setToken, setTracks }) {
         <div class="text-xl font-medium text-black w-20">Search</div>
       </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="strides" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="artist" class="text-l font-light text-black flex flex-col my-2">
           Artist
           <input
             type="text"
@@ -44,7 +53,7 @@ function Input({ setToken, setTracks }) {
             class="bg-gray-300 px-1 rounded"
           />
         </label>
-        <label htmlFor="strides" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="album" class="text-l font-light text-black flex flex-col my-2">
           Album
           <input
             type="text"
@@ -54,13 +63,34 @@ function Input({ setToken, setTracks }) {
             class="bg-gray-300 px-1 rounded"
           />
         </label>
-        <label htmlFor="strides" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="song" class="text-l font-light text-black flex flex-col my-2">
           Song
           <input
             type="text"
             name="song"
             value={song}
             onChange={(e) => setSong(e.target.value)}
+            class="bg-gray-300 px-1 rounded"
+          />
+        </label>
+        <p>or</p>
+        <label htmlFor="bpmlow" class="text-l font-light text-black flex flex-col my-2">
+          Min BPM
+          <input
+            type="text"
+            name="bpmlow"
+            value={bpmLow}
+            onChange={(e) => setBpmLow(e.target.value)}
+            class="bg-gray-300 px-1 rounded"
+          />
+        </label>
+        <label htmlFor="bpmhigh" class="text-l font-light text-black flex flex-col my-2">
+          Max BPM
+          <input
+            type="text"
+            name="bpmHigh"
+            value={bpmHigh}
+            onChange={(e) => setBpmHigh(e.target.value)}
             class="bg-gray-300 px-1 rounded"
           />
         </label>
