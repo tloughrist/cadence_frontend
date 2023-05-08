@@ -9,7 +9,7 @@ function Output({ token, tracks }) {
       <p class="text-xl font-medium text-black w-20">Results</p>
       <div class="flex-col">
         {
-          tracks.length > 0 ?
+          (tracks.length > 0) && (tracks !== "error") ?
           tracks.map((track) =>
             <Tracks
               key={`${track.id}`}

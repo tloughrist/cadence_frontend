@@ -9,17 +9,17 @@ function Tracks({ token, info }) {
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [length, setLength] = useState("");
-  const [bpm, setBPM] = useState("");
+  const [bpm, setBPM] = useState(0);
 
   useEffect(() => {
     normalizeData(info);
   }, [info]);
 
   useEffect(() => {
-    if (Object.keys(info) > 5) {
+    if (Object.keys(info).length > 9 && bpm > 0) {
       sendTrack(info.name, info.artists[0].name, info.album.name, millisToMinutesAndSeconds(info.duration_ms), bpm);
     }
-  }, [bpm]);
+  }, [info, bpm]);
 
   function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
