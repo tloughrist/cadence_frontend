@@ -19,7 +19,7 @@ function Tracks({ token, info }) {
     if (Object.keys(info).length > 9 && bpm > 0) {
       sendTrack(info.name, info.artists[0].name, info.album.name, millisToMinutesAndSeconds(info.duration_ms), bpm);
     }
-  }, [info, bpm]);
+  }, [bpm]);
 
   function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
@@ -53,11 +53,11 @@ function Tracks({ token, info }) {
     <div
       class="bg-slate-300 rounded-xl shadow-lg shadow-black p-3 my-4"
     >
-      <p class="text-l font-light">Artist: {artist}</p>
-      <p class="text-l font-light">Album: {album}</p>
-      <p class="text-l font-light">Song: {title}</p>
-      <p class="text-l font-light">Length: {length}</p>
-      <p class="text-l font-light">BPM: {bpm}</p>
+      <p class="text-l font-light"><b>Artist:</b> {artist}</p>
+      <p class="text-l font-light"><b>Album:</b> {album}</p>
+      <p class="text-l font-light"><b>Song:</b> {title}</p>
+      <p class="text-l font-light"><b>Length:</b> {length}</p>
+      <p class="text-l font-light"><b>BPM:</b> {bpm}</p>
     </div>
   );
 };

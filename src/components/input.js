@@ -20,6 +20,15 @@ function Input({ setToken, setTracks }) {
     setTracks(res2);
   };
 
+  function handleClear(e) {
+    e.preventDefault();
+    setArtist("");
+    setAlbum("");
+    setSong("");
+    setBpmLow("");
+    setBpmHigh("");
+  };
+
   async function getTracks(tok) {
     let art = "";
     let alb = "";
@@ -98,6 +107,12 @@ function Input({ setToken, setTracks }) {
           class="text-l font-light text-white bg-slate-700 mt-2 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
         >
           Find Tracks
+        </button>
+        <button
+          onClick={handleClear}
+          class="text-l font-light text-white bg-slate-700 mt-2 ml-6 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
+        >
+          Clear Form
         </button>
       </form>
     </div>
