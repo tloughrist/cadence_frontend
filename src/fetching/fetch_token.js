@@ -1,6 +1,7 @@
 import { client_id, secret } from "./credentials.js";
 
 export default async function fetchToken() {
+
   const res = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
@@ -10,4 +11,5 @@ export default async function fetchToken() {
   });
   const token = await res.json();
   return token;
+
 };

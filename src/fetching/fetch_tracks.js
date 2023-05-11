@@ -8,4 +8,5 @@ export default async function fetchTracks(token, artist, album, song) {
   });
   const data = await res.json();
   return data.tracks.items;
+  
 };

@@ -8,4 +8,5 @@ export default async function fetchBPM(token, trackInfo) {
   });
   const data = await res.json();
   return Math.floor(data.tempo);
+
 };

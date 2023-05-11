@@ -60,6 +60,7 @@ function Tracks({ token, info }) {
       <p className="text-l font-light"><b>BPM:</b> {bpm}</p>
     </div>
   );
+  
 };
 
 export default Tracks;

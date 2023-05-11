@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/home.js";
 import './input.css';
+import Home from "./components/home.js";
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
       <Route path="/" element={<Home />} />
     </Routes>
   );
+
 };
 
 export default App;

@@ -1,4 +1,5 @@
 export default function sendTrack(title, artist, album, length, bpm) {
+
   fetch(`/tracks`, {
     method: "POST",
     headers: {
@@ -12,4 +13,5 @@ export default function sendTrack(title, artist, album, length, bpm) {
       bpm: bpm
     })
   });
+
 };

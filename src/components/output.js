@@ -22,6 +22,7 @@ function Output({ token, tracks }) {
       </div>
     </div>
   );
+  
 }
 
 export default Output;

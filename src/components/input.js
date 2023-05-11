@@ -29,15 +29,15 @@ function Input({ setToken, setTracks }) {
     setBpmHigh("");
   };
 
-  async function getTracks(tok) {
+  async function getTracks(token) {
     let art = "";
     let alb = "";
     let son = "";
     artist.length > 0 ? art = artist : art = "*";
     album.length > 0 ? alb = album : alb = "*";
     song.length > 0 ? son = song : son = "*";
-    if (bpmLow.length == 0 || bpmHigh.length == 0) {
-      const res = await fetchTracks(tok, art, alb, son);
+    if (bpmLow.length === 0 || bpmHigh.length === 0) {
+      const res = await fetchTracks(token, art, alb, son);
       return res;
     } else {
       const res = await fetchByBPM(bpmLow, bpmHigh);
@@ -117,6 +117,7 @@ function Input({ setToken, setTracks }) {
       </form>
     </div>
   );
-}
+
+};
 
 export default Input;

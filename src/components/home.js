@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import '../input.css';
 import Input from "./input.js";
 import Output from "./output.js";
-import '../input.css';
 
 function Home() {
 
@@ -14,6 +14,7 @@ function Home() {
       <Output token={token} tracks={tracks} />
     </div>
   );
-}
+
+};
 
 export default Home;
