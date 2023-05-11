@@ -5,9 +5,9 @@ import Tracks from './tracks.js';
 function Output({ token, tracks }) {
 
   return (
-    <div class="p-6 max-w-sm mx-auto mt-10 mb-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
-      <p class="text-xl font-medium text-black w-20">Results</p>
-      <div class="flex-col">
+    <div className="p-6 max-w-sm mx-auto mt-10 mb-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
+      <p className="text-xl font-medium text-black w-20">Results</p>
+      <div className="flex-col">
         {
           (tracks.length > 0) && (tracks !== "error") ?
           tracks.map((track) =>
@@ -17,7 +17,7 @@ function Output({ token, tracks }) {
               info={track}
             />
           )
-          :<p class="text-l font-light text-black">No tracks</p>
+          :<p className="text-l font-light text-black">No tracks</p>
         }
       </div>
     </div>

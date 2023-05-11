@@ -51,13 +51,13 @@ function Tracks({ token, info }) {
 
   return (
     <div
-      class="bg-slate-300 rounded-xl shadow-lg shadow-black p-3 my-4"
+      className="bg-slate-300 rounded-xl shadow-lg shadow-black p-3 my-4"
     >
-      <p class="text-l font-light"><b>Artist:</b> {artist}</p>
-      <p class="text-l font-light"><b>Album:</b> {album}</p>
-      <p class="text-l font-light"><b>Song:</b> {title}</p>
-      <p class="text-l font-light"><b>Length:</b> {length}</p>
-      <p class="text-l font-light"><b>BPM:</b> {bpm}</p>
+      <p className="text-l font-light"><b>Artist:</b> {artist}</p>
+      <p className="text-l font-light"><b>Album:</b> {album}</p>
+      <p className="text-l font-light"><b>Song:</b> {title}</p>
+      <p className="text-l font-light"><b>Length:</b> {length}</p>
+      <p className="text-l font-light"><b>BPM:</b> {bpm}</p>
     </div>
   );
 };

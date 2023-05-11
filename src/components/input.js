@@ -46,71 +46,71 @@ function Input({ setToken, setTracks }) {
   };
 
   return (
-    <div class="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
+    <div className="p-6 max-w-sm mx-auto mt-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
       <div>
-        <div class="text-xl font-medium text-black w-20">Search</div>
+        <div className="text-xl font-medium text-black w-20">Search</div>
       </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="artist" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="artist" className="text-l font-light text-black flex flex-col my-2">
           Artist
           <input
             type="text"
             name="artist"
             value={artist}
             onChange={(e) => setArtist(e.target.value)}
-            class="bg-gray-300 px-1 rounded"
+            className="bg-gray-300 px-1 rounded"
           />
         </label>
-        <label htmlFor="album" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="album" className="text-l font-light text-black flex flex-col my-2">
           Album
           <input
             type="text"
             name="album"
             value={album}
             onChange={(e) => setAlbum(e.target.value)}
-            class="bg-gray-300 px-1 rounded"
+            className="bg-gray-300 px-1 rounded"
           />
         </label>
-        <label htmlFor="song" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="song" className="text-l font-light text-black flex flex-col my-2">
           Song
           <input
             type="text"
             name="song"
             value={song}
             onChange={(e) => setSong(e.target.value)}
-            class="bg-gray-300 px-1 rounded"
+            className="bg-gray-300 px-1 rounded"
           />
         </label>
         <p>or</p>
-        <label htmlFor="bpmlow" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="bpmlow" className="text-l font-light text-black flex flex-col my-2">
           Min BPM
           <input
             type="text"
             name="bpmlow"
             value={bpmLow}
             onChange={(e) => setBpmLow(e.target.value)}
-            class="bg-gray-300 px-1 rounded"
+            className="bg-gray-300 px-1 rounded"
           />
         </label>
-        <label htmlFor="bpmhigh" class="text-l font-light text-black flex flex-col my-2">
+        <label htmlFor="bpmhigh" className="text-l font-light text-black flex flex-col my-2">
           Max BPM
           <input
             type="text"
             name="bpmHigh"
             value={bpmHigh}
             onChange={(e) => setBpmHigh(e.target.value)}
-            class="bg-gray-300 px-1 rounded"
+            className="bg-gray-300 px-1 rounded"
           />
         </label>
         <button
           type="submit"
-          class="text-l font-light text-white bg-slate-700 mt-2 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
+          className="text-l font-light text-white bg-slate-700 mt-2 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
         >
           Find Tracks
         </button>
         <button
           onClick={handleClear}
-          class="text-l font-light text-white bg-slate-700 mt-2 ml-6 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
+          className="text-l font-light text-white bg-slate-700 mt-2 ml-6 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
         >
           Clear Form
         </button>
