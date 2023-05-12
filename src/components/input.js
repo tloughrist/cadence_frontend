@@ -32,7 +32,7 @@ function Input({ setToken, setTracks }) {
 
   function displayHelp(e) {
     e.preventDefault();
-    return swal("How to Use the App", `When you search by artist, album, or song, the app searches Spotify for the matching tracks and displays them below. These tracks are then added to the app's own database. When you search by BPM (beats per minute), the app searches its own database for tracks whose BPM falls within that range. Searching by BPM takes precedence over searching by artistc, album, or song, so if there are values in the min BPM and max BPM fields, it will attempt to find tracks that fall in that range in the Cadence database. Simply clear those fields if you want to search by artist, album, or song.`);
+    return swal("How to Use the App", `When you search by artist, album, or song, the app searches Spotify for the matching tracks and displays them below. These tracks are then added to the app's own database, so the more searches that are performed, the more complete the Cadence database will become. When you search by BPM (beats per minute), the app searches its own database for tracks that within that range. Searching by BPM takes precedence over searching by artist, album, or song, so if there are values in the min BPM and max BPM fields, it will attempt to find tracks that fall in that range in the Cadence database. Simply clear those fields if you want to search by artist, album, or song. Enjoy!`);
   };
 
   async function getTracks(token) {
@@ -57,7 +57,7 @@ function Input({ setToken, setTracks }) {
         <div className="text-xl font-medium text-black w-20">Search</div>
         <button
           onClick={displayHelp}
-          className="text-sm font-light text-white bg-slate-700 mt-2 ml-6 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
+          className="text-sm font-light text-white bg-slate-700 mt-2 px-2 py-1 rounded hover:bg-gray-300 hover:text-black shadow-sm shadow-black"
         >
           Help
         </button>
