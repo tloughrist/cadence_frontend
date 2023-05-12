@@ -4,6 +4,8 @@ import Tracks from './tracks.js';
 
 function Output({ token, tracks }) {
 
+  console.log(tracks)
+
   return (
     <div className="p-6 max-w-sm mx-auto mt-10 mb-1 bg-white rounded-xl shadow-lg shadow-black flex items-center space-x-4">
       <p className="text-xl font-medium text-black w-20">Results</p>
