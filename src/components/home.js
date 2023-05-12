@@ -6,7 +6,7 @@ import Output from "./output.js";
 function Home() {
 
   const [token, setToken] = useState();
-  const [tracks, setTracks] = useState([]);
+  const [tracks, setTracks] = useState(["empty"]);
 
   return (
     <div className="bg-slate-700 h-fit p-10 mt-32">
