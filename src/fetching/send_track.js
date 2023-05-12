@@ -1,6 +1,6 @@
 export default function sendTrack(title, artist, album, length, bpm) {
 
-  fetch(`/tracks`, {
+  fetch(`https://cadence-h597.onrender.com/tracks`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
